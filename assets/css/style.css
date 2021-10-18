@@ -132,6 +132,7 @@ img {
     font-size: var(--fs-200);
     font-family: var(--ff-secondry);
     font-family: 400;
+    text-transform : uppercase;
     transform-origin: top right;
     transform: rotate(90deg) translateX(100%);
 }
@@ -220,12 +221,3 @@ img {
     }
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
