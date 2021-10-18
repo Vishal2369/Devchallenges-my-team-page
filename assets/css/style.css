@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+:root {
+    /* Colors */
+    --clr-black : hsla(0, 0%, 0%, 1);
+    --clr-gray :  hsla(0, 0%, 66%, 1);
+
+    /* Font family */
+    --ff-primary : 'Poppins', sans-serif;
+    --ff-secondry : 'PT Serif', serif;
+
+    /* Font size */
+    --fs-700 : 2.25rem;
+    --fs-400 : 1.125rem;
+    --fs-300 : 0.875rem;
+    --fs-200 : 0.625rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h3,
+p
+{
+    margin: 0;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    font-family: var(--ff-primary);
+    line-height: 1.5;
+    color : var(--clr-black);
+}
+
+h1 {
+    font-size: var(--fs-700);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: var(--fs-400);
+    font-weight: 600;
+}
+
+p {
+    font-size: var(--fs-300);
+    font-weight: 400;
+}
+
+/* Make images easier to work with */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: min(90vw, 55rem);
+    margin: auto;
+    padding-top: 2.5rem;
+}
+
+.content__title {
+    font-family: var(--ff-secondry);
+    letter-spacing : -0.045rem;
+}
+
+.about__title {
+    padding-block: 1.5rem 0.5rem;
+}
+
+.team {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap : 0.5rem 0.75rem;
+}
+
+.member {
+    position: relative;
+}
+
+.member:nth-of-type(1) {
+    grid-row: 1 / span 3;
+}
+
+.member:nth-of-type(2) {
+    grid-row: 2 / span 3;
+}
+
+.member:nth-of-type(3) {
+    grid-row: 5 / span 3;
+}
+
+.member:nth-of-type(4) {
+    grid-row: 6 / span 3;
+}
+
+.member:nth-of-type(5) {
+    grid-row: 9 / span 3;
+}
+
+.member:nth-of-type(6) {
+    grid-row: 10 / span 3;
+}
+
+.member__img {
+    width: 90%;
+    aspect-ratio: 2 / 3;
+}
+
+.member__name {
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.member__role {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: var(--fs-200);
+    font-family: var(--ff-secondry);
+    font-family: 400;
+    transform-origin: top right;
+    transform: rotate(90deg) translateX(100%);
+}
+
+/* Tab Design */
+@media screen and (min-width : 48em) {
+    :root {
+        --fs-200 : 0.75rem;
+    }
+
+    .container {
+        padding-top: 3.5rem;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .content__title {
+        width: 50%;
+    }
+
+    .about {
+        width: 50%;
+    }
+
+    .about__title {
+        padding-block: 0 0.75rem;
+    }
+
+    .about__text {
+        font-size: var(--fs-400);
+    }
+
+    .team {
+        margin-top: 3.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem 1rem;
+    }
+
+    .member:nth-of-type(3) {
+        grid-row: 1 / span 3;
+    }
+
+    .member:nth-of-type(4) {
+        grid-row: 5 / span 3;
+    }
+
+    .member:nth-of-type(5) {
+        grid-row: 6 / span 3;
+    }
+
+    .member:nth-of-type(6) {
+        grid-row: 5 / span 3;
+    }
+}
+
+.footer {
+    margin-block: 4rem 1rem;
+    font-size: var(--fs-300);
+    color: var(--clr-gray);
+    text-align: center;
+}
+
+.createdBy {
+    font-weight: 700;
+    text-decoration: underline;
+    color: var(--clr-gray);
+}
+
+/* Desktop design */
+
+@media screen and (min-width : 90rem) {
+    .container {
+        padding-top: 4rem;
+    }
+
+    .about__title {
+        padding-block: 0 1rem;
+    }
+
+    .team {
+        margin-top: 4rem;
+        gap: 1rem 1.25rem;
+    }
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
